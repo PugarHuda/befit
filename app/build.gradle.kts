@@ -4,11 +4,19 @@ plugins {
 }
 
 android {
+<<<<<<< HEAD
     namespace = "com.example.goals"
     compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.goals"
+=======
+    namespace = "com.example.setting"
+    compileSdk = 35
+
+    defaultConfig {
+        applicationId = "com.example.setting"
+>>>>>>> origin/raisha
         minSdk = 24
         targetSdk = 34
         versionCode = 1

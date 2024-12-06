@@ -1,0 +1,148 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5EDF9"
+    android:padding="15dp"
+    android:id="@+id/main">
+
+    <!-- Back Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back Button"
+            android:layout_gravity="start" />
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change your password"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginTop="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_marginTop="40dp">
+
+            <!-- TextView di sebelah kiri -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current Password"
+                android:textSize="14sp"
+                android:textColor="#A159E4"
+                android:layout_gravity="center_vertical"/>
+
+            <!-- EditText di sebelah kanan -->
+            <EditText
+                android:id="@+id/etCurrentPass"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/text_field"
+                android:hint="********"
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/usernameLabel"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            >
+
+            <!-- TextView di sebelah kiri -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Password"
+                android:textSize="14sp"
+                android:textColor="#A159E4"
+                android:layout_gravity="center_vertical"/>
+
+            <!-- EditText di sebelah kanan -->
+            <EditText
+                android:id="@+id/etNewPass"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="32dp"
+                android:background="@drawable/text_field"
+                android:hint="********"
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/usernameLabel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            >
+
+            <!-- TextView di sebelah kiri -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirm Password"
+                android:textSize="14sp"
+                android:textColor="#A159E4"
+                android:layout_gravity="center_vertical"/>
+
+            <!-- EditText di sebelah kanan -->
+            <EditText
+                android:id="@+id/etConfirmPass"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/text_field"
+                android:hint="********"
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/usernameLabel" />
+        </LinearLayout>
+
+
+
+
+        <!-- Update Button -->
+        <Button
+            android:layout_marginTop="80dp"
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/logout_button_bg"
+            android:padding="12dp"
+            android:text="Set password"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/etPhoneNumber" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

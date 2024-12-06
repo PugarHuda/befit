@@ -19,6 +19,10 @@ dependencyResolutionManagement {
     }
 }
 
+<<<<<<< HEAD
 rootProject.name = "Goals"
+=======
+rootProject.name = "Setting"
+>>>>>>> origin/raisha
 include(":app")
  
