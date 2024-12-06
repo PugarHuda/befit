@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screen"
+    tools:context=".ScreenKetujuhActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Pesan Utama -->
+        <TextView
+            android:id="@+id/bmi_message_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Great news! Your BMI is within the"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <!-- Status BMI -->
+        <TextView
+            android:id="@+id/bmi_status_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="normal"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/bmi_message_continued"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="range. Keep maintaining a balanced diet and an active lifestyle."
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="4dp"
+            android:textSize="14sp" />
+
+        <!-- Pesan Motivasi -->
+        <TextView
+            android:id="@+id/motivation_message_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Use this app to track your progress, set health goals, and access personalized tips to achieve a balanced lifestyle."
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp" />
+
+        <!-- Tombol OK -->
+        <Button
+            android:id="@+id/btn_ok_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#9578D3"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp" />
+    </LinearLayout>
+
+</RelativeLayout>

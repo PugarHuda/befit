@@ -1,0 +1,56 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TUGASBESAR"
+        tools:targetApi="31">
+
+        <!-- LoginActivity sebagai Activity utama -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- SignUpActivity tanpa intent-filter -->
+
+
+        <!-- MainScreen Activity -->
+        <activity
+            android:name=".MainScreen"
+            android:exported="true" />
+
+        <!-- ScreenKeduaActivity -->
+        <activity
+            android:name=".ScreenKeduaActivity"
+            android:exported="true" />
+
+        <!-- ScreenKetigaActivity -->
+        <activity
+            android:name=".ScreenKetigaActivity"
+            android:exported="true" />
+
+        <!-- ScreenKeempatActivity -->
+        <activity android:name=".ScreenKeempatActivity" />
+
+        <!-- ScreenKelimaActivity -->
+        <activity android:name=".ScreenKelimaActivity" />
+
+        <!-- ScreenKeenamActivity -->
+        <activity android:name=".ScreenKeenamActivity" />
+        <!-- ScreenKetujuhActivity -->
+        <activity android:name=".ScreenKetujuhActivity"></activity>
+
+
+    </application>
+</manifest>
