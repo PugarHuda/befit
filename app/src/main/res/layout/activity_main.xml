@@ -16,12 +16,13 @@
         android:gravity="center_horizontal">
 
         <!-- Back Button -->
-        <ImageView
+        <ImageButton
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/ic_back"
             android:contentDescription="Back Button"
-            android:layout_gravity="start" />
+            android:layout_gravity="start"
+            android:background="@android:color/transparent" />
 
         <!-- Title -->
         <TextView
@@ -77,6 +78,7 @@
             >
 
             <Button
+                android:id="@+id/EditProf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="start"
@@ -86,6 +88,7 @@
                 android:background="#00000000"/>
 
             <Button
+                android:id="@+id/ChangePass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="start"
@@ -95,6 +98,7 @@
                 android:background="#00000000" />
 
             <Button
+                android:id="@+id/Inven"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="start"
@@ -107,6 +111,7 @@
 
         <!-- Log Out Button -->
         <Button
+            android:id="@+id/Logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Log Out"
@@ -115,6 +120,7 @@
             android:layout_marginTop="50dp" />
 
         <Button
+            android:id="@+id/DelAcc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
