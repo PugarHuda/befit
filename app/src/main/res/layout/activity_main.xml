@@ -98,7 +98,7 @@
                 android:background="#00000000" />
 
             <Button
-                android:id="@+id/Inven"
+                android:id="@+id/Inventory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="start"
