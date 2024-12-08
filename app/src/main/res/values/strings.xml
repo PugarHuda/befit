@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">DailyTask2</string>
+    <string-array name="challenge_categories">
+        <item>Choose challenge category</item>
+        <item>Food</item>
+        <item>Mindfulness</item>
+        <item>Workout</item>
+        <item>Sleep</item>
+    </string-array>
 </resources>

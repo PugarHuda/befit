@@ -5,4 +5,10 @@
     <color name="light_purple">#F3E5F5</color>
     <color name="dark_blue">#32357a</color>
     <color name="light_blue">#f2f1f6</color>
+    <color name="purple_100">#E1BEE7</color>
+    <color name="purple_300">#BA68C8</color>
+    <color name="purple_500">#9C27B0</color>
+    <color name="purple_700">#7B1FA2</color>
+    <color name="purple_900">#4A0072</color>
+    <color name="purple_950">#8C7CE3</color>
 </resources>
