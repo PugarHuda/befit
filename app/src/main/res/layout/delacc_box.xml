@@ -12,34 +12,34 @@
     <ImageView
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:src="@drawable/ic_logout"
-        android:contentDescription="Logout Icon" />
+        android:src="@drawable/no_acc"
+        android:contentDescription="Delete Icon" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logout"
+        android:text="Delete your account"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_marginTop="16dp" />
 
     <TextView
-        android:layout_width="347dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="You will lose all of your data by deleting your account. This action cannot be undone."
+        android:textSize="14sp"
+        android:gravity="center"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:text="You will not lose all of your data by logging out your account."
-        android:textColor="#808080"
-        android:textSize="14sp" />
+        android:textColor="#808080" />
 
     <Button
-        android:id="@+id/btn_logout"
+        android:id="@+id/btn_delete_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/red"
-        android:text="Logout"
+        android:text="Delete account"
         android:textColor="@android:color/white"
         android:layout_marginBottom="8dp" />
 

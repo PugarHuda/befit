@@ -4,12 +4,9 @@ import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,13 +39,43 @@ class MainActivity : AppCompatActivity() {
 
         // Logout
         findViewById<Button>(R.id.Logout).setOnClickListener {
+            showLogoutDialog()
+        }
+        // Delete Account
+        findViewById<Button>(R.id.DelAcc).setOnClickListener {
             showDeleteAccountDialog()
         }
+
+
     }
-    private fun showDeleteAccountDialog() {
+    private fun showLogoutDialog() {
         // Membuat dialog
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.logout_box)
+
+        // Menghubungkan tombol pada dialog
+        val deleteButton = dialog.findViewById<Button>(R.id.btn_logout)
+        val cancelButton = dialog.findViewById<Button>(R.id.btn_cancel)
+
+        // Klik Delete Account
+        deleteButton.setOnClickListener {
+            Toast.makeText(this, "Logout successfully", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
+        }
+
+        // Klik Cancel
+        cancelButton.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        // Menampilkan dialog
+        dialog.show()
+    }
+
+    private fun showDeleteAccountDialog() {
+        // Membuat dialog
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.delacc_box)
 
         // Menghubungkan tombol pada dialog
         val deleteButton = dialog.findViewById<Button>(R.id.btn_delete_account)

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/character_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+        android:contentDescription="Character Image" />
+
+    <TextView
+        android:id="@+id/character_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Character Name"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/btn_use_character"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pakai"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/white" />
+</LinearLayout>
