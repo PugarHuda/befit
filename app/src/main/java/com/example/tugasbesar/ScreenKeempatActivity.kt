@@ -20,20 +20,60 @@ class ScreenKeempatActivity : AppCompatActivity() {
 
         // Aksi tombol OK
         okButton.setOnClickListener {
-            val height = heightInput.text.toString()
-            val weight = weightInput.text.toString()
+            val heightText = heightInput.text.toString()
+            val weightText = weightInput.text.toString()
 
-            // Validasi input
-            if (height.isEmpty() || weight.isEmpty()) {
+            // Validasi input kosong
+            if (heightText.isEmpty() || weightText.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields!", Toast.LENGTH_SHORT).show()
-            } else {
-                // Proses data tinggi dan berat
-                Toast.makeText(this, "Height: $height cm, Weight: $weight kg", Toast.LENGTH_SHORT).show()
-
-                // Pindah ke ScreenKelimaActivity
-                val intent = Intent(this, ScreenKelimaActivity::class.java)
-                startActivity(intent)
+                return@setOnClickListener
             }
+
+            try {
+                // Konversi input menjadi angka
+                val height = heightText.toDouble() / 100 // Convert to meters
+                val weight = weightText.toDouble()
+
+                // Validasi nilai yang masuk akal
+                if (height <= 0 || weight <= 0) {
+                    Toast.makeText(this, "Height and weight must be greater than zero!", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+
+                // Hitung BMI
+                val bmi = weight / (height * height)
+
+                // Debugging log
+                println("Height (meters): $height")
+                println("Weight (kg): $weight")
+                println("Calculated BMI: $bmi")
+
+                // Tentukan kategori BMI
+                val intent = when {
+                    bmi < 18.5 -> {
+                        Toast.makeText(this, "Underweight: BMI = %.2f".format(bmi), Toast.LENGTH_SHORT).show()
+                        Intent(this, ScreenKelimaActivity::class.java)
+
+                    }
+                    bmi > 24.9 -> {
+                        Toast.makeText(this, "Overweight: BMI = %.2f".format(bmi), Toast.LENGTH_SHORT).show()
+                        Intent(this, ScreenKeenamActivity::class.java)
+                    }
+                    else -> {
+                        Toast.makeText(this, "Normal: BMI = %.2f".format(bmi), Toast.LENGTH_SHORT).show()
+                        Intent(this, ScreenKetujuhActivity::class.java)
+
+                    }
+                }
+
+                // Pindah ke aktivitas yang sesuai
+                startActivity(intent)
+            } catch (e: NumberFormatException) {
+                Toast.makeText(this, "Invalid input format! Use numeric values.", Toast.LENGTH_SHORT).show()
+                finish()
+            }
+
+
         }
     }
 }

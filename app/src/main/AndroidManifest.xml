@@ -23,6 +23,8 @@
         </activity>
 
         <!-- SignUpActivity tanpa intent-filter -->
+        <activity android:name=".SignupActivity" />
+
 
 
         <!-- MainScreen Activity -->
@@ -48,9 +50,12 @@
 
         <!-- ScreenKeenamActivity -->
         <activity android:name=".ScreenKeenamActivity" />
-        <!-- ScreenKetujuhActivity -->
-        <activity android:name=".ScreenKetujuhActivity"></activity>
 
+        <!-- ScreenKetujuhActivity -->
+        <activity android:name=".ScreenKetujuhActivity"/>
+
+        <!-- Screenfriend -->
+        <activity android:name=".friendActivity"/>
 
     </application>
 </manifest>

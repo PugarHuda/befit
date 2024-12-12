@@ -1,4 +1,5 @@
 package com.example.tugasbesar
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -10,10 +11,7 @@ class ScreenKelimaActivity : AppCompatActivity() {
         setContentView(R.layout.screen_kelima)
 
         // Tombol OK
-        val btnOk: Button = findViewById(R.id.btn_ok)
-        btnOk.setOnClickListener {
-            // Tutup layar ini
-            finish()
+        val intent = Intent(this, ScreenKeenamActivity::class.java)
+        startActivity(intent)
         }
     }
-}
