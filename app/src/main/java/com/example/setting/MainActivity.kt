@@ -1,5 +1,6 @@
 package com.example.setting
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +8,10 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -46,7 +49,18 @@ class MainActivity : AppCompatActivity() {
             showDeleteAccountDialog()
         }
 
+//Comment
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_community)
 
+        val comments = listOf(
+            DataClassComment("Isabella Ibel", "just now", "Bagaimana cara mengenali gejala depresi?", 2, 2, R.drawable.profile),
+            DataClassComment("Siska Zahr", "just now", "Apakah depresi berdampak pada orang lain?", 5, 10, R.drawable.profile)
+        )
+
+        val recyclerView
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = CommentAdapter(comments)
     }
     private fun showLogoutDialog() {
         // Membuat dialog
