@@ -86,7 +86,7 @@
         android:layout_weight="1"
         android:padding="8dp"
         android:scrollbars="vertical"
-
+        tools:listitem="@layout/item_comment"
         />
 
     <!-- Floating Action Button -->

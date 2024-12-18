@@ -1,37 +1,59 @@
-package com.example.recyclerviewkotlin
+package com.example.setting
 
+import PostComment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.setting.R
 
-class AdapterClass(private val dataList: ArrayList<DataClass>): RecyclerView.Adapter<AdapterClass.ViewHolderClass>() {
+class CommentAdapter(private val commentList: List<PostComment>) : RecyclerView.Adapter<CommentAdapter.CommentViewHolder>() {
 
-    var onItemClick: ((DataClass) -> Unit)? = null
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_comment, parent, false)
-        return ViewHolderClass(itemView)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_comment, parent, false)
+        return CommentViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
-        val currentItem = dataList[position]
+    override fun onBindViewHolder(holder: CommentViewHolder, position: Int) {
+        val comment = commentList[position]
 
+        // Bind data komentar utama
+        holder.usernameTextView.text = comment.username
+        holder.timeTextView.text = comment.time
+        holder.commentTextView.text = comment.comment
 
-        holder.itemView.setOnClickListener{
-            onItemClick?.invoke(currentItem)
+        // Menampilkan balasan jika ada
+        if (comment.replies.isNotEmpty()) {
+            holder.repliesLayout.visibility = View.VISIBLE
+
+            // Set adapter untuk balasan
+            val replyAdapter = CommentAdapter(comment.replies)
+            holder.repliesRecyclerView.layoutManager = LinearLayoutManager(holder.itemView.context)
+            holder.repliesRecyclerView.adapter = replyAdapter
+        } else {
+            holder.repliesLayout.visibility = View.GONE
+        }
+
+        // Menambahkan listener untuk memilih komentar yang ingin dibalas
+        holder.itemView.setOnClickListener {
+            // Menggunakan context untuk memanggil activity yang ada
+            (it.context as? CommentActivity)?.onCommentSelected(comment)
         }
     }
 
     override fun getItemCount(): Int {
-        return dataList.size
+        return commentList.size
     }
 
-    class ViewHolderClass(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val rvImage:ImageView = itemView.findViewById(R.id.profileImage)
-        val rvTitle:TextView = itemView.findViewById(R.id.title)
+    class CommentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val usernameTextView: TextView = itemView.findViewById(R.id.usernameTextView)
+        val timeTextView: TextView = itemView.findViewById(R.id.timeTextView)
+        val commentTextView: TextView = itemView.findViewById(R.id.commentTextView)
+        val repliesLayout: LinearLayout = itemView.findViewById(R.id.repliesLayout)
+        val repliesRecyclerView: RecyclerView = itemView.findViewById(R.id.repliesRecyclerView)
     }
 }
+

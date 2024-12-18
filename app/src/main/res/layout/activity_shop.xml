@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Shop"
+    tools:context=".ShopActivity"
     android:padding="16dp"
     android:background="@drawable/bggradient">
 
@@ -13,7 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:layout_width="32dp"
@@ -32,71 +36,18 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"/>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
-            android:layout_gravity="left"
 
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <!-- Image -->
-                <TextView
-                    android:id="@+id/characterName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="0.5dp"
-                    android:text="Celine"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:id="@+id/characterImage"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:scaleType="centerCrop"/>
-<!--                    android:src="@drawable/ic_character_placeholder" -->
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:padding="0.5dp">
-
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:text="Coins"
-                        android:textSize="12sp" />
-
-                    <Button
-                        android:id="@+id/button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="48dp"
-                        android:text="Buy"
-                        android:textAlignment="center"
-                        android:textSize="10sp" />
-                </LinearLayout>
-
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ShopList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/item_shop" />
 
     </LinearLayout>
+
+
+
 
 
 

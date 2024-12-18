@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="5dp"
+        android:paddingHorizontal="50dp"
+
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_gravity="left" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Image -->
+            <TextView
+                android:id="@+id/characterName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                android:text="Celine"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/characterImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"/>
+            <!--                    android:src="@drawable/ic_character_placeholder" -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="0.5dp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Coins"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Buy"
+                    android:textAlignment="center"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="5dp"
+        android:paddingHorizontal="50dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_gravity="left" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Image -->
+            <TextView
+                android:id="@+id/characterNamee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                android:text="Celine"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/characterImagee"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"/>
+            <!--                    android:src="@drawable/ic_character_placeholder" -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="0.5dp">
+
+                <TextView
+                    android:id="@+id/textVieww"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Coins"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/buttonn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Buy"
+                    android:textAlignment="center"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Tombol Back -->
+    <ImageButton
+        android:id="@+id/imageButton12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.04"
+        android:background="#00000000"
+        app:srcCompat="@drawable/ic_back" />
+
+    <!-- TextView POST -->
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="59dp"
+        android:layout_height="28dp"
+        android:text="POST"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <!-- RecyclerView untuk Komentar -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewComments"
+        android:layout_width="361dp"
+        android:layout_height="668dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_comment" />
+
+    <!-- EditText untuk Input Komentar -->
+    <EditText
+        android:id="@+id/editTextReply"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="Post your reply"
+
+
+
+        android:textColor="#000000"
+        android:padding="10dp"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/buttonSend"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    <!-- Tombol Send -->
+    <ImageButton
+        android:id="@+id/buttonSend"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+
+        android:contentDescription="Send"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

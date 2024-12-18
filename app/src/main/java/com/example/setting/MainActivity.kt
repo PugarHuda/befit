@@ -10,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 
+
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,9 +36,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Inventory
+
+        val characterList = listOf(
+            Character("Character 1", R.drawable.char1),
+            Character("Character 2", R.drawable.char2),
+            Character("Character 3", R.drawable.char3)
+        )
+
         findViewById<Button>(R.id.Inventory).setOnClickListener {
-            val intent = Intent(this, EditPass::class.java)
-            startActivity(intent)
+            val dialogFragment = CharacterDialogFragment(characterList)
+            dialogFragment.show(supportFragmentManager, "CharacterDialog")
         }
 
         // Logout
@@ -49,18 +57,6 @@ class MainActivity : AppCompatActivity() {
             showDeleteAccountDialog()
         }
 
-//Comment
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_community)
-
-        val comments = listOf(
-            DataClassComment("Isabella Ibel", "just now", "Bagaimana cara mengenali gejala depresi?", 2, 2, R.drawable.profile),
-            DataClassComment("Siska Zahr", "just now", "Apakah depresi berdampak pada orang lain?", 5, 10, R.drawable.profile)
-        )
-
-        val recyclerView
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = CommentAdapter(comments)
     }
     private fun showLogoutDialog() {
         // Membuat dialog
