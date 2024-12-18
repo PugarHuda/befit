@@ -1,62 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <!-- Konten utama lainnya dapat ditambahkan di sini -->
 
     <LinearLayout
         android:id="@+id/navigationBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
         android:background="@color/white"
         android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/homeIcon"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_target"
-            android:contentDescription="Home Icon"
-            android:padding="10dp"
             android:clickable="true"
-            android:focusable="true" />
+            android:contentDescription="Home Icon"
+            android:focusable="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_target" />
+
 
         <ImageView
             android:id="@+id/statsIcon"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_home"
-            android:contentDescription="Stats Icon"
-            android:padding="10dp"
             android:clickable="true"
-            android:focusable="true" />
+            android:contentDescription="Stats Icon"
+            android:focusable="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_home" />
 
         <ImageView
             android:id="@+id/tasksIcon"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_shop"
-            android:contentDescription="Tasks Icon"
-            android:padding="10dp"
             android:clickable="true"
-            android:focusable="true" />
+            android:contentDescription="Tasks Icon"
+            android:focusable="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_shop" />
 
         <ImageView
             android:id="@+id/settingsIcon"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_friends"
-            android:contentDescription="Settings Icon"
-            android:padding="10dp"
             android:clickable="true"
-            android:focusable="true" />
+            android:contentDescription="Settings Icon"
+            android:focusable="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_friends" />
 
     </LinearLayout>
 
