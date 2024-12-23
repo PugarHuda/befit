@@ -20,7 +20,11 @@ class DailyTaskActivity : AppCompatActivity() {
             RecyclerViewAdapter.NavbarItem(R.drawable.ic_home, "Stats"),
             RecyclerViewAdapter.NavbarItem(R.drawable.ic_shop, "Tasks"),
             RecyclerViewAdapter.NavbarItem(R.drawable.ic_friends, "Settings")
+
+
         )
+
+
 
 
         // Menyambungkan RecyclerView dengan Adapter
@@ -37,5 +41,8 @@ class DailyTaskActivity : AppCompatActivity() {
         }
 
     }
+
+
+
 
 }

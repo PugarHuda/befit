@@ -21,7 +21,7 @@ class GoalAdapter(private val goals: List<Goal>) :
         val goal = goals[position]
         holder.icon.setImageResource(goal.icon)
         holder.title.text = goal.title
-        holder.progressText.text = goal.progress
+//        holder.progressText.text = goal.progress
         holder.progressBar.max = goal.max
         holder.progressBar.progress = goal.current
     }
@@ -31,7 +31,7 @@ class GoalAdapter(private val goals: List<Goal>) :
     class GoalViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val icon: ImageView = view.findViewById(R.id.goalIcon)
         val title: TextView = view.findViewById(R.id.goalTitle)
-        val progressText: TextView = view.findViewById(R.id.goalProgressText)
+//        val progressText: TextView = view.findViewById(R.id.goalProgressText)
         val progressBar: ProgressBar = view.findViewById(R.id.goalProgressBar)
     }
 }
