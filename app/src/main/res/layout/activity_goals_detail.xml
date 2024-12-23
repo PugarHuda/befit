@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F3FE"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_back"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HEALTHY DIET"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:gravity="center" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/setting"
+                android:contentDescription="Settings" />
+        </LinearLayout>
+
+        <!-- Level Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LVL 1"
+            android:textColor="#9A9A9A"
+            android:layout_gravity="center_horizontal" />
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:progress="50"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressTint="#A896F0"
+            android:backgroundTint="#EAE5FF"
+            android:layout_marginTop="8dp" />
+
+        <!-- Meals Eaten Graph -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MEALS EATEN"
+                android:textSize="14sp"
+                android:textColor="#9A9A9A"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="8dp" />
+
+            <!-- Replace this with your graph library or custom view -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/sample_graph"
+                android:contentDescription="Graph" />
+        </LinearLayout>
+
+        <!-- Ongoing Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ONGOING"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:paddingBottom="8dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Tasks Section -->
+        <LinearLayout
+            android:id="@+id/tasks_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_background"
+            android:layout_marginTop="8dp"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/tasks_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TASKS"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <ImageView
+                    android:id="@+id/tasks_toggle_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/arrow_right"
+                    android:contentDescription="Expand/Collapse Tasks" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tasks_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. Drink 2L of water"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. Eat 5 servings of vegetables"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. Avoid sugary drinks"
+                    android:padding="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!-- Challenges Section -->
+        <LinearLayout
+            android:id="@+id/challenges_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_background"
+            android:layout_marginTop="8dp"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/challenges_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="CHALLENGES"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <ImageView
+                    android:id="@+id/challenges_toggle_icon"
+                    android:layout_width="10dp"
+                    android:layout_height="18dp"
+                    android:contentDescription="Expand/Collapse Challenges"
+                    android:src="@drawable/arrow_right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/challenges_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. Collaborative Recipe (60 EXP, 40 Coins)"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. Nutrition Trivia Quiz (80 EXP, 90 Coins)"
+                    android:padding="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+            <!-- Nutrition Trivia Quiz -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Nutrition Trivia Quiz\nPrize: 80 EXP, 90 Coins"
+                    android:paddingStart="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
