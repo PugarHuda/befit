@@ -13,27 +13,53 @@
         android:theme="@style/Theme.Setting"
         tools:targetApi="31">
 
+        <!-- Community activity -->
         <activity
             android:name=".Community"
             android:exported="false" />
+            
+        <!-- Shop activity -->
         <activity
             android:name=".ShopActivity"
             android:exported="false" />
+            
+        <!-- Edit password activity -->
         <activity
             android:name=".EditPass"
             android:exported="false" />
+            
+        <!-- Edit profile activity -->
         <activity
             android:name=".EditProfile"
             android:exported="false" />
+            
+        <!-- Main activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <!-- Daily Task activity -->
+        <activity
+            android:name=".DailyTaskActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Challenge activity -->
+        <activity
+            android:name="com.example.dailytask2.ChallengeActivity" />
+        
+        <!-- Add Challenge activity -->
+        <activity
+            android:name="com.example.dailytask2.AddChallengeActivity" />
+
+    </application>
 </manifest>

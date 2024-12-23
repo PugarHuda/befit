@@ -1,20 +1,24 @@
 <resources>
-    <string name="app_name">Community</string>
+    <!-- Nama aplikasi -->
+    <string name="app_name">Community</string> <!-- Menggunakan nama "Community" dari HEAD -->
 
+    <!-- Elemen dari HEAD -->
     <string name="profileImage">p</string>
-
     <string name="userName">Mama Ibel</string>
-
     <string name="time">1 hr ago</string>
-
     <string name="comment">A toggle button allows the user to change a setting between two states.
         You can add a basic toggle button to your layout with the ToggleButton object.
         Android 4.0 (API level 14) introduces another kind of toggle button called a switch that provides
         a slider control, which you can add with a Switch object.</string>
-
-    <string name="likes">2
-        </string>
-
+    <string name="likes">2</string>
     <string name="replies">5</string>
 
+    <!-- Elemen tambahan dari rangga -->
+    <string-array name="challenge_categories">
+        <item>Choose challenge category</item>
+        <item>Food</item>
+        <item>Mindfulness</item>
+        <item>Workout</item>
+        <item>Sleep</item>
+    </string-array>
 </resources>

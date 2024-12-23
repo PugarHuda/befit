@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    // Untuk aplikasi Setting
     namespace = "com.example.setting"
     compileSdk = 35
 
@@ -26,28 +27,31 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures{
+
+    buildFeatures {
         dataBinding = true
     }
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation("androidx.recyclerview:recyclerview:1.2.1")
-    implementation ("androidx.viewpager2:viewpager2:1.0.0")
-    implementation ("com.google.android.material:material:1.9.0")
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+    implementation("com.google.android.material:material:1.9.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

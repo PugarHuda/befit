@@ -6,7 +6,8 @@
     android:orientation="vertical"
     android:background="#F5EFFC"
     android:padding="16dp"
-    tools:context=".Community">
+    tools:context=".Community"
+    >
 
     <!-- Header -->
     <RelativeLayout
