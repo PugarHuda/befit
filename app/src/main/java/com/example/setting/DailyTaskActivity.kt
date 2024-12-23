@@ -35,5 +35,7 @@ class DailyTaskActivity : AppCompatActivity() {
             val intent = Intent(this, ChallengeActivity::class.java)
             startActivity(intent)
         }
+
     }
+
 }

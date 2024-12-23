@@ -14,7 +14,7 @@
 
         <!-- LoginActivity as the main entry point -->
         <activity
-            android:name=".LoginActivity"
+            android:name=".MainScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,9 +25,9 @@
         <!-- SignUpActivity without intent-filter -->
         <activity android:name=".SignupActivity" />
 
-        <!-- MainScreen Activity -->
+        <!-- login Activity -->
         <activity
-            android:name=".MainScreen"
+            android:name=".LoginActivity"
             android:exported="true" />
 
         <!-- ScreenKeduaActivity -->

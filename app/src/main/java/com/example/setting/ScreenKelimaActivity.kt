@@ -1,4 +1,5 @@
 package com.example.setting
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -10,8 +11,14 @@ class ScreenKelimaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.screen_kelima)
 
-        // Tombol OK
-        val intent = Intent(this, ScreenKeenamActivity::class.java)
-        startActivity(intent)
+        // Referensi tombol OK
+        val btnOk = findViewById<Button>(R.id.btn_ok)
+
+        // Set OnClickListener untuk tombol OK
+        btnOk.setOnClickListener {
+            // Intent ke halaman DailyTask2
+            val intent = Intent(this, DailyTaskActivity::class.java)
+            startActivity(intent)
         }
     }
+}

@@ -16,7 +16,7 @@ class MainScreen : AppCompatActivity() {
         // Tambahkan listener untuk klik layar
         rootView.setOnClickListener {
             // Berpindah ke ScreenKeduaActivity
-            val intent = Intent(this, ScreenKeduaActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
     }

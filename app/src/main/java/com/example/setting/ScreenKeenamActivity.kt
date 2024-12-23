@@ -1,8 +1,11 @@
 package com.example.setting
+
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+
 class ScreenKeenamActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,8 +17,11 @@ class ScreenKeenamActivity : AppCompatActivity() {
 
         // Tambahkan aksi saat tombol OK ditekan
         okButton.setOnClickListener {
-            Toast.makeText(this, "OK clicked! Navigating...", Toast.LENGTH_SHORT).show()
-            // Tambahkan logika untuk navigasi atau aksi lainnya
+            Toast.makeText(this, "OK clicked! Navigating to DailyTask2...", Toast.LENGTH_SHORT).show()
+
+            // Intent untuk navigasi ke DailyTask2Activity
+            val intent = Intent(this, DailyTaskActivity::class.java)
+            startActivity(intent)
         }
     }
 }

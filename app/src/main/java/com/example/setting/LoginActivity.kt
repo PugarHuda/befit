@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please fill in both email and password", Toast.LENGTH_SHORT).show()
             } else if (email == "Dendy@gmail.com" && password == "123") { // Contoh validasi
-                val intent = Intent(this, MainScreen::class.java)
+                val intent = Intent(this, ScreenKeduaActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
