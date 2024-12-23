@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/screen"
+    android:gravity="center">
+
+    <!-- Pesan BMI -->
+<TextView
+android:id="@+id/tv_bmi_message"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Your BMI indicates that you are."
+android:textColor="#FFFFFF"
+android:textSize="16sp"
+/>
+    <TextView
+        android:id="@+id/bmi_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="underweight."
+        android:layout_gravity="left"
+        android:textColor="#E87D7D"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_bmo_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consider consulting a healthcare professional to explore ways to achieve a healthier weight."
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <!-- Pesan Health Journey -->
+<TextView
+android:id="@+id/tv_health_journey"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Take charge of your health journey today! Use this app to track your progress, set health goals, and access personalized tips to achieve a balanced lifestyle."
+android:textColor="#FFFFFF"
+android:textSize="16sp"
+/>
+
+    <!-- Tombol OK -->
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#8F6CCF"
+        android:padding="12dp"
+        android:text="OK"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="24dp"/>
+</LinearLayout>

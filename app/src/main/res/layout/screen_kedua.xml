@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/screen">
+    <!-- Teks "Enter Username" -->
+    <TextView
+        android:id="@+id/label_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Username"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"
+        android:gravity="center" />
+
+    <!-- Input teks -->
+    <EditText
+        android:id="@+id/input_username"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter your username"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        android:inputType="text"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Tombol "Next Step" -->
+    <Button
+        android:id="@+id/btn_next_step"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NEXT STEP"
+        android:backgroundTint="#CE93D8"
+        android:textColor="#FFFFFF"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="12dp"
+        android:elevation="4dp"
+        android:layout_gravity="center" />
+</LinearLayout>

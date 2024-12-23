@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/screen">
+
+    <!-- Text "Choose Your Gender" -->
+    <TextView
+        android:id="@+id/label_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CHOOSE YOUR GENDER"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="24dp"
+        android:gravity="center" />
+
+    <!-- Container untuk tombol "Male" dan "Female" -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="32dp">
+
+        <!-- Tombol "Male" -->
+        <Button
+            android:id="@+id/btn_male"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="MALE"
+            android:backgroundTint="#FFFFFF"
+            android:textColor="#000000"
+            android:layout_marginEnd="16dp"
+            android:elevation="4dp" />
+
+        <!-- Tombol "Female" -->
+        <Button
+            android:id="@+id/btn_female"
+            android:layout_width="113dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="5dp"
+            android:text="FEMALE"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <!-- Tombol "Next Step" -->
+    <Button
+        android:id="@+id/btn_next_step_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NEXT STEP"
+        android:backgroundTint="#CE93D8"
+        android:textColor="#FFFFFF"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="12dp"
+        android:elevation="4dp" />
+</LinearLayout>
