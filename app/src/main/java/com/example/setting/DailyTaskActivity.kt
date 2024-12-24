@@ -3,6 +3,9 @@ package com.example.setting
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,25 +17,6 @@ class DailyTaskActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.daily_task) // Pastikan file layout ini ada
 
-        // Menyiapkan data untuk RecyclerView
-        val navbarItems = listOf(
-            RecyclerViewAdapter.NavbarItem(R.drawable.ic_target, "Home"),
-            RecyclerViewAdapter.NavbarItem(R.drawable.ic_home, "Stats"),
-            RecyclerViewAdapter.NavbarItem(R.drawable.ic_shop, "Tasks"),
-            RecyclerViewAdapter.NavbarItem(R.drawable.ic_friends, "Settings")
-
-
-        )
-
-
-
-
-        // Menyambungkan RecyclerView dengan Adapter
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerView) // Pastikan id ini sesuai dengan RecyclerView di layout
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        val adapter = RecyclerViewAdapter(navbarItems)
-        recyclerView.adapter = adapter
-
         // Navigasi ke ChallengeActivity
         val challengeLink: TextView = findViewById(R.id.challenge)
         challengeLink.setOnClickListener {
@@ -40,9 +24,34 @@ class DailyTaskActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-    }
+        val settingLink: ImageView = findViewById(R.id.imageView4)
+        settingLink.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        val goalLink: ImageButton = findViewById(R.id.btGoal)
+        goalLink.setOnClickListener {
+            val intent = Intent(this, GoalsHubActivity::class.java)
+            startActivity(intent)
+        }
 
 
+        val shopLink: ImageButton = findViewById(R.id.btShop)
+        shopLink.setOnClickListener {
+            Log.d("DailyTaskActivity", "Navigating to ShopActivity") // Log untuk memastikan klik terjadi
+            val intent = Intent(this, ShopActivity::class.java)
+            startActivity(intent)
+        }
 
+
+        val friendLink: ImageButton = findViewById(R.id.btFriend)
+        friendLink.setOnClickListener {
+            val intent = Intent(this, friendActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        }
 
 }

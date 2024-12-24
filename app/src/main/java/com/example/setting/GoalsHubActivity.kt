@@ -1,6 +1,10 @@
 package com.example.setting
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,8 +26,7 @@ class GoalsHubActivity : AppCompatActivity() {
         // Referensi ke RecyclerView
         val recyclerView = findViewById<RecyclerView>(R.id.goalsRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = GoalAdapter(goals)
+        recyclerView.adapter = GoalAdapter(goals) // Menetapkan adapter untuk RecyclerView
+
     }
 }
-
-

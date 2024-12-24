@@ -18,7 +18,6 @@ class ShopActivity : AppCompatActivity() {
             DataClassShop("Item 3", R.drawable.char3, 8)
         )
 
-        val cardView = findViewById<CardView>(R.id.ShopList)
 
         // Tambahkan margin kanan
         val recyclerView = findViewById<RecyclerView>(R.id.ShopList)

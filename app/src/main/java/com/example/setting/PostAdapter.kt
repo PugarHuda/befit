@@ -1,4 +1,5 @@
 package com.example.setting
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -6,9 +7,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+class PostAdapter(private var postList: List<Post>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
+    // Fungsi untuk memperbarui data
+    fun updateData(newPostList: List<Post>) {
+        postList = newPostList
+        notifyDataSetChanged() // Memberitahu adapter bahwa data telah berubah
+    }
 
-class PostAdapter (private val postList: List<Post>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
     // ViewHolder class
     inner class PostViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val avatar: ImageView = view.findViewById(R.id.avatar)
