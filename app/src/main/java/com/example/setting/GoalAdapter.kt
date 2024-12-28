@@ -8,8 +8,10 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class GoalAdapter(private val goals: List<Goal>) :
-    RecyclerView.Adapter<GoalAdapter.GoalViewHolder>() {
+class GoalAdapter(
+    private val goals: List<Goal>, // Daftar goals
+    private val onItemClickListener: (Goal) -> Unit // Listener untuk klik item
+) : RecyclerView.Adapter<GoalAdapter.GoalViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GoalViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -19,19 +21,27 @@ class GoalAdapter(private val goals: List<Goal>) :
 
     override fun onBindViewHolder(holder: GoalViewHolder, position: Int) {
         val goal = goals[position]
-        holder.icon.setImageResource(goal.icon)
-        holder.title.text = goal.title
-//        holder.progressText.text = goal.progress
-        holder.progressBar.max = goal.max
-        holder.progressBar.progress = goal.current
+        holder.bind(goal)
     }
 
     override fun getItemCount() = goals.size
 
-    class GoalViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class GoalViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val icon: ImageView = view.findViewById(R.id.goalIcon)
         val title: TextView = view.findViewById(R.id.goalTitle)
-//        val progressText: TextView = view.findViewById(R.id.goalProgressText)
         val progressBar: ProgressBar = view.findViewById(R.id.goalProgressBar)
+
+        // Mengisi data goal ke dalam view
+        fun bind(goal: Goal) {
+            icon.setImageResource(goal.icon)
+            title.text = goal.title
+            progressBar.max = goal.max
+            progressBar.progress = goal.current
+
+            // Menangani klik pada item
+            itemView.setOnClickListener {
+                onItemClickListener(goal)
+            }
+        }
     }
 }

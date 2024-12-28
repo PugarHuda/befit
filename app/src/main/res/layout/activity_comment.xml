@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.04"
         android:background="#00000000"
-        app:srcCompat="@drawable/ic_back" />
+        app:srcCompat="@drawable/back" />
 
     <!-- TextView POST -->
     <TextView
@@ -36,14 +36,14 @@
     <!-- RecyclerView untuk Komentar -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewComments"
-        android:layout_width="361dp"
-        android:layout_height="668dp"
+        android:layout_width="385dp"
+        android:layout_height="564dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_comment" />
+        tools:listitem="@layout/item_commentt" />
 
     <!-- EditText untuk Input Komentar -->
     <EditText
@@ -52,9 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:hint="Post your reply"
-
-
-
+        android:background="@drawable/edittext_border"
         android:textColor="#000000"
         android:padding="10dp"
         android:singleLine="true"
@@ -70,12 +68,11 @@
         android:layout_height="50dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-
+        android:background="@drawable/round_button"
         android:contentDescription="Send"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
-        />
+        app:srcCompat="@drawable/kirim" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,8 +6,7 @@
     android:orientation="vertical"
     android:background="#F5EFFC"
     android:padding="16dp"
-    tools:context=".Community"
-    >
+    tools:context=".Community">
 
     <!-- Header -->
     <RelativeLayout
@@ -34,15 +33,6 @@
             android:textStyle="bold"
             android:textColor="#000000" />
 
-        <ImageButton
-            android:id="@+id/notif"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="-7dp"
-            android:background="@null"
-            android:contentDescription="Back"
-            android:src="@drawable/ic_notif" />
 
         <ImageButton
             android:id="@+id/friend"

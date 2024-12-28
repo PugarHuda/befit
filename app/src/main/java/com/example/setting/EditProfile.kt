@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -23,10 +22,12 @@ class EditProfile : AppCompatActivity() {
             insets
         }
 
+        // Tombol kembali ke MainActivity
         val settingLink: ImageView = findViewById(R.id.backk)
-        settingLink.setOnClickListener{
+        settingLink.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()  // Menutup EditProfile dan kembali ke MainActivity
         }
 
         // Inisialisasi elemen input
@@ -53,8 +54,13 @@ class EditProfile : AppCompatActivity() {
                     showToast("Phone number is required!")
                 }
                 else -> {
+                    // Menampilkan Toast dan kembali ke MainActivity
                     showToast("Profile updated successfully!")
-                    // Tambahkan logika untuk menyimpan perubahan jika diperlukan
+
+                    // Kembali ke MainActivity setelah update
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()  // Menutup EditProfile dan kembali ke MainActivity
                 }
             }
         }

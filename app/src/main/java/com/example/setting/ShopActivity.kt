@@ -1,6 +1,8 @@
 package com.example.setting
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.GridLayoutManager
@@ -18,10 +20,15 @@ class ShopActivity : AppCompatActivity() {
             DataClassShop("Item 3", R.drawable.char3, 8)
         )
 
-
-        // Tambahkan margin kanan
+        // Konfigurasi RecyclerView
         val recyclerView = findViewById<RecyclerView>(R.id.ShopList)
         recyclerView.layoutManager = GridLayoutManager(this, 2) // 2 kolom
         recyclerView.adapter = ShopAdapter(itemList)
+
+        // Tambahkan fungsi untuk tombol kembali
+        val backButton = findViewById<ImageView>(R.id.ic_back) // Pastikan ID sesuai di XML
+        backButton.setOnClickListener {
+            finish() // Menutup ShopActivity dan kembali ke halaman sebelumnya
+        }
     }
 }

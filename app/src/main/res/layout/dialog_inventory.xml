@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/card_bg">
+    android:background="@drawable/rounded_background">
 
     <TextView
         android:id="@+id/inventory_title"
@@ -20,8 +20,10 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/characterViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_width="231dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="@drawable/friend_card_background"/>
 
     <Button
         android:id="@+id/btn_pakai"

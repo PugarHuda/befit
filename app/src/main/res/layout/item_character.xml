@@ -16,8 +16,8 @@
 
     <ImageView
         android:id="@+id/characterImage"
-        android:layout_width="200dp"
+        android:layout_width="288dp"
         android:layout_height="200dp"
-        android:src="@drawable/ic_launcher_foreground"
-        android:contentDescription="Character Image" />
+        android:contentDescription="Character Image"
+        android:src="@drawable/ic_launcher_foreground" />
 </LinearLayout>

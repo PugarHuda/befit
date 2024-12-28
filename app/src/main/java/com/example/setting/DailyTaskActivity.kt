@@ -47,7 +47,7 @@ class DailyTaskActivity : AppCompatActivity() {
 
         val friendLink: ImageButton = findViewById(R.id.btFriend)
         friendLink.setOnClickListener {
-            val intent = Intent(this, friendActivity::class.java)
+            val intent = Intent(this, Community::class.java)
             startActivity(intent)
         }
 

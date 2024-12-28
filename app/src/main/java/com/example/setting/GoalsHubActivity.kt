@@ -2,8 +2,6 @@ package com.example.setting
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,7 +24,20 @@ class GoalsHubActivity : AppCompatActivity() {
         // Referensi ke RecyclerView
         val recyclerView = findViewById<RecyclerView>(R.id.goalsRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = GoalAdapter(goals) // Menetapkan adapter untuk RecyclerView
+        recyclerView.adapter = GoalAdapter(goals) { goal ->
+            // Intent ke GoalsDetailActivity jika item diklik
+            if (goal.title == "Healthy Food") {
+                val intent = Intent(this, GoalsDetailActivity::class.java)
+                intent.putExtra("GOAL_TITLE", goal.title)
+                startActivity(intent)
+            }
+        }
 
+        val backButton: ImageView = findViewById(R.id.backButton)
+        backButton.setOnClickListener {
+            val intent = Intent(this, DailyTaskActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }

@@ -1,7 +1,6 @@
 package com.example.setting
 
-
 data class Character(
     val name: String,
-    val imageResId: Int
+    val imageResId: Int // Referensi ke gambar karakter
 )

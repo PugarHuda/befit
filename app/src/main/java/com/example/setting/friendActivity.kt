@@ -1,6 +1,7 @@
 package com.example.setting
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -18,6 +19,8 @@ class friendActivity : AppCompatActivity() {
         val imageButton2 = findViewById<ImageButton>(R.id.imageButton2)
         val popupContainer = findViewById<FrameLayout>(R.id.popup_container)
         val inviteButton = findViewById<Button>(R.id.invite_button)
+        val imageButton4 = findViewById<ImageButton>(R.id.imageButton4) // Tombol ke Community
+
 
         // Ketika tombol ImageButton2 ditekan, tampilkan pop-up
         imageButton2.setOnClickListener {
@@ -28,5 +31,12 @@ class friendActivity : AppCompatActivity() {
         inviteButton.setOnClickListener {
             popupContainer.visibility = View.GONE
         }
+
+        // Ketika tombol ImageButton4 ditekan, buka halaman Community
+        imageButton4.setOnClickListener {
+            val intent = Intent(this, Community::class.java)
+            startActivity(intent)
+        }
+
     }
 }
