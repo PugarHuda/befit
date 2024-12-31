@@ -8,8 +8,6 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
 class DailyTaskActivity : AppCompatActivity() {
 
@@ -26,7 +24,7 @@ class DailyTaskActivity : AppCompatActivity() {
 
         val settingLink: ImageView = findViewById(R.id.imageView4)
         settingLink.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, SettingActivity::class.java)
             startActivity(intent)
         }
 

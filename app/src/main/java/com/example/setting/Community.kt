@@ -45,6 +45,7 @@ class Community : AppCompatActivity() {
         newPostText?.let {
             // Jika ada post baru, tambahkan ke daftar "My Page"
             val newPost = Post(
+
                 avatarResId = R.drawable.char1,  // Ganti dengan avatar yang sesuai
                 username = "Your Name",  // Ganti dengan nama pengguna
                 postTime = "Just now",

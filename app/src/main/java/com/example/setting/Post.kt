@@ -5,6 +5,9 @@ data class Post(
     val username: String,      // Nama pengguna
     val postTime: String,      // Waktu posting
     val postText: String,      // Teks posting
-    val likeCount: Int,        // Jumlah suka
-    val commentCount: Int      // Jumlah komentar
-)
+    var likeCount: Int,        // Jumlah suka
+    val commentCount: Int,      // Jumlah komentar
+    var isLiked: Boolean = false // Properti baru untuk status like
+) {
+    val id: String = java.util.UUID.randomUUID().toString() // Inisialisasi dengan UUID
+}

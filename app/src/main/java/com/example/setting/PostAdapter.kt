@@ -1,5 +1,6 @@
 package com.example.setting
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,18 +35,37 @@ class PostAdapter(private var postList: List<Post>) : RecyclerView.Adapter<PostA
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         val post = postList[position]
+
+        // Bind data ke View
         holder.username.text = post.username
         holder.postTime.text = post.postTime
         holder.postText.text = post.postText
         holder.likeCount.text = post.likeCount.toString()
         holder.commentCount.text = post.commentCount.toString()
 
+        // Set gambar berdasarkan status like
+        if (post.isLiked) {
+            holder.likeButton.setImageResource(R.drawable.ic_liked)
+        } else {
+            holder.likeButton.setImageResource(R.drawable.ic_like)
+        }
+
         // Example: Adding click listeners
         holder.likeButton.setOnClickListener {
-            // Handle like button click
+            post.isLiked = !post.isLiked // Toggle status like
+            if (post.isLiked) {
+                post.likeCount += 1
+            } else {
+                post.likeCount -= 1
+            }
+
+            notifyItemChanged(position) // Perbarui tampilan
         }
         holder.commentButton.setOnClickListener {
-            // Handle comment button click
+            val context = holder.itemView.context
+            val intent = Intent(context, CommentActivity::class.java)
+            intent.putExtra("postId", post.id) // Kirim data post ID jika diperlukan
+            context.startActivity(intent)
         }
     }
 

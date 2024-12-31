@@ -1,6 +1,7 @@
 package com.example.setting
 
 import PostComment
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -27,14 +28,33 @@ class CommentActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = commentAdapter
 
-        // Misalnya menambahkan komentar baru
-        val newComment = PostComment(
-            username = "John Doe",
-            time = "2 mins ago",
-            comment = "Apa kabar?",
-            replies = listOf() // Belum ada balasan
-        )
-        addComment(newComment)
+        // Ambil referensi dari UI
+        val commentInput: EditText = findViewById(R.id.editTextReply)
+        val sendCommentButton: ImageButton = findViewById(R.id.buttonSend)
+
+        // Tombol kirim komentar
+        sendCommentButton.setOnClickListener {
+            val commentText = commentInput.text.toString().trim()
+            if (commentText.isNotEmpty()) {
+                val newComment = PostComment(
+
+                    username = "Your Username", // Ganti dengan nama pengguna
+                    time = "Just now",
+                    comment = commentText,
+                    replies = listOf() // Belum ada balasan
+                )
+                addComment(newComment)
+                commentInput.text.clear() // Bersihkan input
+            }
+        }
+
+        // Fungsi untuk tombol kembali
+        val backButton = findViewById<ImageButton>(R.id.backButton)
+        backButton.setOnClickListener {
+            val intent = Intent(this, Community::class.java)
+            startActivity(intent) // Membuka halaman Community
+            finish() // Menutup aktivitas saat ini
+        }
     }
 
     // Menambahkan komentar baru
@@ -59,3 +79,4 @@ class CommentActivity : AppCompatActivity() {
         }
     }
 }
+

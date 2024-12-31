@@ -62,6 +62,9 @@
         <!-- Additional Activities from Community App -->
         <activity
             android:name=".Community" />
+
+        <activity
+            android:name=".CommentActivity" />
             
         <activity
             android:name=".ShopActivity" />
@@ -88,7 +91,7 @@
 
         <activity android:name=".GoalsDetailActivity" />
 
-        <activity android:name=".MainActivity" />
+        <activity android:name=".SettingActivity" />
 
         <activity android:name=".CreatePostActivity" />
 

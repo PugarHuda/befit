@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -14,6 +15,12 @@ class EditPass : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_change_pass)
+
+        //KE PAGE SETTING
+        findViewById<ImageButton>(R.id.backkk).setOnClickListener {
+            val intent = Intent(this, SettingActivity::class.java)
+            startActivity(intent)
+        }
 
         // Menangani padding untuk sistem bar
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -52,7 +59,7 @@ class EditPass : AppCompatActivity() {
                     // Menampilkan notifikasi berhasil
                     showToast("Password updated successfully!")
                     // Kembali ke MainActivity
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, SettingActivity::class.java)
                     startActivity(intent)
                     finish() // Menutup activity saat ini
                 }

@@ -70,6 +70,8 @@
     </com.google.android.material.tabs.TabLayout>
 
     <!-- RecyclerView -->
+
+    <!-- Floating Action Button -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
@@ -77,10 +79,8 @@
         android:layout_weight="1"
         android:padding="8dp"
         android:scrollbars="vertical"
-        tools:listitem="@layout/item_comment"
-        />
+        tools:listitem="@layout/item_post" />
 
-    <!-- Floating Action Button -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"

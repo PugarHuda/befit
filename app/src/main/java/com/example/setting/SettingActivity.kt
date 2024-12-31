@@ -14,8 +14,9 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import android.Manifest
 import android.content.pm.PackageManager
+import android.widget.ImageButton
 
-class MainActivity : AppCompatActivity() {
+class SettingActivity : AppCompatActivity() {
 
     private val PICK_IMAGE_REQUEST = 1 // Request code untuk pemilihan gambar
     private lateinit var profileImageView: ImageView
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_setting)
 
         // Menghubungkan profileImageView dengan ImageView yang ada di layout
         profileImageView = findViewById(R.id.profileImageView) // Ganti dengan ID ImageView Anda
@@ -38,6 +39,12 @@ class MainActivity : AppCompatActivity() {
                 arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
                 100
             )
+        }
+
+        //KE PAGE HOME
+        findViewById<ImageButton>(R.id.mbalik).setOnClickListener {
+            val intent = Intent(this, DailyTaskActivity::class.java)
+            startActivity(intent)
         }
 
         // KE PAGE EDIT PROFILE

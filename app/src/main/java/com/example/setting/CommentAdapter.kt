@@ -49,9 +49,9 @@ class CommentAdapter(private val commentList: List<PostComment>) : RecyclerView.
     }
 
     class CommentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val usernameTextView: TextView = itemView.findViewById(R.id.usernameTextView)
-        val timeTextView: TextView = itemView.findViewById(R.id.timeTextView)
-        val commentTextView: TextView = itemView.findViewById(R.id.commentTextView)
+        val usernameTextView: TextView = itemView.findViewById(R.id.UsernameComment)
+        val timeTextView: TextView = itemView.findViewById(R.id.CommentTime)
+        val commentTextView: TextView = itemView.findViewById(R.id.CommentText)
         val repliesLayout: LinearLayout = itemView.findViewById(R.id.repliesLayout)
         val repliesRecyclerView: RecyclerView = itemView.findViewById(R.id.repliesRecyclerView)
     }
