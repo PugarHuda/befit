@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "810329602814",
+    "firebase_url": "https://befit-623f6-default-rtdb.firebaseio.com",
+    "project_id": "befit-623f6",
+    "storage_bucket": "befit-623f6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810329602814:android:fe78aafcabb2bd7c2c03af",
+        "android_client_info": {
+          "package_name": "com.example.setting"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRFx3rMMNsTK63NV12yV5t1lAdJGOVvmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

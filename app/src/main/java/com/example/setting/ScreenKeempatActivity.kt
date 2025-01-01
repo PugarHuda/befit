@@ -6,12 +6,19 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class ScreenKeempatActivity : AppCompatActivity() {
+
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.screen_keempat)
+
+        // Inisialisasi Firebase Database
+        database = FirebaseDatabase.getInstance().reference
 
         // Referensi elemen UI
         val heightInput: EditText = findViewById(R.id.input_height)
@@ -49,31 +56,52 @@ class ScreenKeempatActivity : AppCompatActivity() {
                 println("Calculated BMI: $bmi")
 
                 // Tentukan kategori BMI
-                val intent = when {
+                val intent: Intent
+                when {
                     bmi < 18.5 -> {
                         Toast.makeText(this, "Underweight: BMI = %.2f".format(bmi), Toast.LENGTH_SHORT).show()
-                        Intent(this, ScreenKelimaActivity::class.java)
-
+                        intent = Intent(this, ScreenKelimaActivity::class.java)
                     }
                     bmi > 24.9 -> {
                         Toast.makeText(this, "Overweight: BMI = %.2f".format(bmi), Toast.LENGTH_SHORT).show()
-                        Intent(this, ScreenKeenamActivity::class.java)
+                        intent = Intent(this, ScreenKeenamActivity::class.java)
                     }
                     else -> {
                         Toast.makeText(this, "Normal: BMI = %.2f".format(bmi), Toast.LENGTH_SHORT).show()
-                        Intent(this, ScreenKetujuhActivity::class.java)
-
+                        intent = Intent(this, ScreenKetujuhActivity::class.java)
                     }
                 }
 
+                // Simpan data ke Firebase
+                saveBMIToFirebase(height, weight, bmi)
+
                 // Pindah ke aktivitas yang sesuai
                 startActivity(intent)
+
             } catch (e: NumberFormatException) {
                 Toast.makeText(this, "Invalid input format! Use numeric values.", Toast.LENGTH_SHORT).show()
                 finish()
             }
+        }
+    }
 
+    private fun saveBMIToFirebase(height: Double, weight: Double, bmi: Double) {
+        val userId = FirebaseDatabase.getInstance().reference.push().key
+        val bmiData = HashMap<String, Any>()
+        bmiData["height"] = height
+        bmiData["weight"] = weight
+        bmiData["bmi"] = bmi
 
+        if (userId != null) {
+            // Menyimpan data BMI ke Firebase
+            database.child("bmi_records").child(userId).setValue(bmiData)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this, "BMI data saved successfully!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "Failed to save BMI data", Toast.LENGTH_SHORT).show()
+                    }
+                }
         }
     }
 }
