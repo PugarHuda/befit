@@ -15,7 +15,7 @@ class ShopAdapter(private val itemList: List<DataClassShop>) :
     class ShopViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val characterName: TextView = itemView.findViewById(R.id.characterName)
         val characterImage: ImageView = itemView.findViewById(R.id.characterImage)
-        val coinText: TextView = itemView.findViewById(R.id.coinText) // Perbaiki ID ini
+        val coinText: TextView = itemView.findViewById(R.id.coinText) // ID untuk harga
         val buyButton: Button = itemView.findViewById(R.id.buyButton)
     }
 
@@ -30,8 +30,16 @@ class ShopAdapter(private val itemList: List<DataClassShop>) :
 
         // Set data untuk setiap item
         holder.characterName.text = item.name
-        holder.characterImage.setImageResource(item.imageResId) // Gambar karakter
         holder.coinText.text = "Coins: ${item.coins}"
+
+        // Ambil gambar dari drawable berdasarkan nama gambar
+        val resId = holder.itemView.context.resources.getIdentifier(item.image, "drawable", holder.itemView.context.packageName)
+        if (resId != 0) {
+            holder.characterImage.setImageResource(resId)
+        } else {
+            // Jika gambar tidak ditemukan, tampilkan gambar default
+            holder.characterImage.setImageResource(R.drawable.chibi5) // Pastikan default_image ada di drawable
+        }
 
         // Aksi pada tombol "Buy"
         holder.buyButton.setOnClickListener {
@@ -42,3 +50,4 @@ class ShopAdapter(private val itemList: List<DataClassShop>) :
 
     override fun getItemCount(): Int = itemList.size
 }
+

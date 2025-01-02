@@ -1,34 +1,60 @@
 package com.example.setting
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.*
 
 class ShopActivity : AppCompatActivity() {
+
+    private lateinit var database: DatabaseReference
+    private val itemList = mutableListOf<DataClassShop>()
+    private lateinit var shopAdapter: ShopAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_shop)
 
-        val itemList = listOf(
-            DataClassShop("Item 1", R.drawable.char1, 10),
-            DataClassShop("Item 2", R.drawable.char2, 12),
-            DataClassShop("Item 3", R.drawable.char3, 8)
-        )
+        // Inisialisasi Firebase
+        database = FirebaseDatabase.getInstance().reference
 
-        // Konfigurasi RecyclerView
+        // Inisialisasi RecyclerView
         val recyclerView = findViewById<RecyclerView>(R.id.ShopList)
-        recyclerView.layoutManager = GridLayoutManager(this, 2) // 2 kolom
-        recyclerView.adapter = ShopAdapter(itemList)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
 
-        // Tambahkan fungsi untuk tombol kembali
-        val backButton = findViewById<ImageView>(R.id.ic_back) // Pastikan ID sesuai di XML
-        backButton.setOnClickListener {
-            finish() // Menutup ShopActivity dan kembali ke halaman sebelumnya
+        // Inisialisasi Adapter
+        shopAdapter = ShopAdapter(itemList)
+        recyclerView.adapter = shopAdapter
+
+        // Ambil data dari Firebase
+        fetchShopItems()
+
+        // Fungsi untuk tombol kembali
+        findViewById<ImageView>(R.id.ic_back).setOnClickListener {
+            finish() // Menutup aktivitas ini
         }
+    }
+
+    private fun fetchShopItems() {
+        database.child("shopItems").addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                itemList.clear() // Bersihkan data lama
+                for (dataSnapshot in snapshot.children) {
+                    val item = dataSnapshot.getValue(DataClassShop::class.java)
+                    if (item != null) {
+                        itemList.add(item)
+                    }
+                }
+                shopAdapter.notifyDataSetChanged() // Beritahu adapter bahwa data berubah
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Tangani error
+                println("Database Error: ${error.message}")
+            }
+        })
     }
 }

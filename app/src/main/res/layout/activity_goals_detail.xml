@@ -79,7 +79,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:src="@drawable/walk"
+                android:src="@drawable/bar_chart"
                 android:contentDescription="Graph" />
         </LinearLayout>
 
